@@ -3,8 +3,10 @@ let $statusLabel = document.querySelector('.js-status');
 var interval;
 
 function FilterProducts () {
-  chrome.extension.sendRequest({message: 'i\'m alive, bitch'}, function(response)
-  {});
+    console.log('filter');
+    chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
+
+});
 };
 
 function ToggleInterval () {
