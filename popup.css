@@ -1,0 +1,47 @@
+.wrapper {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text {
+  margin: 0;
+}
+
+.switch {
+  display: inline-block;
+  position: relative;
+  width: 2.5rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  background: rgba(0,0,0,0.26);
+  transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: middle;
+  cursor: pointer;
+}
+.switch::before {
+  content: '';
+  position: absolute;
+  top: -0.25rem;
+  left: -0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #fafafa;
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.28);
+  border-radius: 50%;
+  transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.switch:active::before {
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.28), 0 0 0 1.25rem rgba(128,128,128,0.1);
+}
+input:checked + .switch {
+  background: rgba(139,195,74,0.5);
+}
+input:checked + .switch::before {
+  left: 1.25rem;
+  background: #8bc34a;
+}
+input:checked + .switch:active::before {
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.28), 0 0 0 1.25rem rgba(139,195,74,0.2);
+}
