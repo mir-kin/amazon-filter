@@ -1,8 +1,13 @@
 function FilterProducts () {
-    console.log(window.activeInterval);
+    for (let element of document.querySelectorAll('.sx-price-large')) {
+        element.closest('.s-result-item').style.display = 'none';
+    }
+    console.log('running...');
 }
 
-if (window.activeInterval == 0) {
+console.log('initial', window.activeInterval);
+
+if (window.activeInterval == 0 || window.activeInterval == undefined) {
   window.filterInterval = window.setInterval(FilterProducts, 1000);
   window.activeInterval = 1;
 } else if (window.activeInterval == 1){
