@@ -1,3 +1,3 @@
-chrome.browserAction.onClicked.addListener(function(tab) {
-    chrome.tabs.executeScript(null, {file: "test.js"});
-});
+chrome.tabs.onUpdated.addListener(function(activeInfo){
+  chrome.tabs.executeScript(null, {file: "test.js"});
+})
